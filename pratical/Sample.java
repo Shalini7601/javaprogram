@@ -1,31 +1,16 @@
-public class Sample{
-void print (int num){
-for(int i=1;i<=5;i++){
-System.out.println(num*i);
-try{
-Thread.sleep(500);
+package java8eg;
+
+@FunctionalInterface
+public interface Sample{
+
+void display(String a);//abstract method
+
+default void display1(){ //default method
+System.out.println("i am default method");
 }
-catch(Exception e){
-System.out.println(e);
+
+static void my(){
+System.out.println(" iam static method");
 }
-}
-}
-}
-class Thread1 extends Thread{
-Sample t;
-public Thread1(Sample t){
-this.t=t;
-}
-public void run(){
-t.print(3);
-}
-}
-class Thread2 extends Thread{
-	Sample t;
-	public Thread2(Sample t){
-		this.t=t;
-	}
-	public void run(){
-		t.print(5);
-	}
+//void abc();
 }
